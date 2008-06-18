@@ -218,7 +218,7 @@ module ScottBarron                   #:nodoc:
           read_inheritable_attribute(:states)[name.to_sym] = state
           
           #add magick to define named scope for this state
-          self.send(:named_scope, name, :conditions => {:state => name})  
+          self.send(:named_scope, name, :conditions => {:state => name.to_s})  
           
           define_method("#{state.name}?") { current_state == state.name }
         end

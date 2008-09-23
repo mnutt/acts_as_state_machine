@@ -31,3 +31,12 @@ If prompted, use the user/pass anonymous/anonymous.
  o.close! # notice is sent by mailer
  o.return!
 
+This version of State Machine will additionally create named scopes for your states - referring to the above example
+
+Order.opened will return all orders with a state of opened
+Order.closed will return all models with a state of closed
+
+and so on 
+
+For more information on named scopes see 
+http://railscasts.com/episodes/108

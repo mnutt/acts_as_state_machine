@@ -53,9 +53,9 @@ module ScottBarron                   #:nodoc:
             return false unless guard(record)
             loopback = record.current_state == to
             states = record.class.read_inheritable_attribute(:states)
-            next_state = states[to]
+            next_state = states[to.to_sym]
             old_state = states[record.current_state]
-          
+         
             next_state.entering(record) unless loopback
           
             record.update_attribute(record.class.state_column, to.to_s)

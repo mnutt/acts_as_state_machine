@@ -35,6 +35,10 @@ module ScottBarron                   #:nodoc:
             exitact  = @opts[:exit]
             record.send(:run_transition_action, exitact) if exitact
           end
+
+          def to_s
+            @name.to_s
+          end
         end
 
         class StateTransition
